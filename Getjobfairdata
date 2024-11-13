@@ -1,0 +1,7 @@
+CREATE PROCEDURE GetJobFairData
+AS
+BEGIN
+    SELECT jobfairid, studentname, studentaddress, age
+    FROM jobfair
+    ORDER BY jobfairid;  -- You can modify the ORDER BY clause as needed
+END;
