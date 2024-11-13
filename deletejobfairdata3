@@ -1,0 +1,17 @@
+CREATE PROCEDURE DeleteJobFairData
+    @JobFairID INT
+AS
+BEGIN
+    DELETE FROM jobfair
+    WHERE jobfairid = @JobFairID;
+    
+    -- Optionally, you can check if the record existed and return a message
+    IF @@ROWCOUNT = 0
+    BEGIN
+        PRINT 'No record found with the given JobFairID';
+    END
+    ELSE
+    BEGIN
+        PRINT 'Record deleted successfully';
+    END
+END;
